@@ -1,0 +1,174 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 10;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  --blue: #216df8;
+}
+
+main {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 550px;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgb(124, 30, 201);
+  margin: 10px 0;
+}
+
+.score-animated {
+  color: rgb(236, 92, 25);
+  animation-name: scoreAnim;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scoreAnim {
+  0% {
+    transform: rotate(0deg);
+    font-size: 3rem;
+  }
+  25% {
+    font-size: 4rem;
+    transform: rotate(360deg);
+  }
+  100% {
+    font-size: 3rem;
+    transform: rotate(360deg);
+  }
+}
+
+.award,
+.award-number {
+  border: none;
+  border-bottom: 2px solid grey;
+  border-radius: 7px;
+  padding: 5px;
+  margin: 5px;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.award-number {
+  width: 50px;
+}
+
+.award:focus,
+.award-number:focus {
+  outline: none;
+  outline-style: dotted;
+  outline-color: rgba(33, 109, 248, 0.5);
+}
+
+button {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 7px;
+  border: 1px solid var(--blue);
+  background-color: rgb(161, 193, 255);
+  color: rgb(1, 63, 179);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(212, 226, 255);
+}
+
+.record {
+  color: var(--blue);
+}
+
+.record ul {
+  list-style: none;
+}
+
+.display {
+  font-size: 1.2rem;
+  font-weight: 700;
+  height: 50px;
+  opacity: 0;
+}
+
+.display-anim {
+  color: var(--blue);
+  animation-name: displayAnim;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes displayAnim {
+  0% {
+    opacity: 1;
+    font-size: 0.5rem;
+  }
+  15% {
+    font-size: 1.2rem;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    font-size: 1.2rem;
+  }
+}
+
+.final-area {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+
+  visibility: visible;
+  max-height: 500px;
+  opacity: 1;
+  overflow: hidden;
+  transition: all 1s ease-out;
+  transition-delay: 1s;
+}
+
+.final-area-hidden {
+  visibility: hidden;
+  max-width: 0px;
+  max-height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 1s ease-out;
+}
+
+.award-area {
+  max-height: 500px;
+  opacity: 1;
+  transition: all 1s ease-out;
+  transition-delay: 1s;
+}
+
+.award-area-hidden {
+  visibility: hidden;
+  max-height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 1s ease-out;
+}
+
+.smile img {
+  width: 50px;
+  margin: 10px;
+}
+
+.smile-1 {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
+.smile-2 {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  transform: rotate(45deg);
+}
