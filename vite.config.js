@@ -10,4 +10,7 @@ export default defineConfig({
       crypto: 'crypto-browserify',
     },
   },
+  build: {
+    outDir: "dist", // The directory where the build output will be placed
+  },
 })
