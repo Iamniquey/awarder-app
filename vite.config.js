@@ -3,8 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/awarder/dist/", // Adjust this to your app's base path
-  root: "./dist", // This should point to the root directory
+  base: "/awarder/", // Adjust this to your app's base path
   plugins: [react()],
   resolve: {
     alias: {
