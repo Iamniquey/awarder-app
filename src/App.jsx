@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useRef, useState } from "react";
 import DOMPurify from "dompurify";
 import rightSound from "./assets/right-sound.wav";
