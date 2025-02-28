@@ -28,6 +28,17 @@ jobs:
       - name: Build the project
         run: npm run build
 
+      - name: Move dist contents to root and delete dist folder
+        run: |
+          # Move contents of dist to root
+          mv dist/* .
+          # Delete the dist folder
+          rm -rf dist
+
+      - name: Create .gitignore file
+        run: |
+          echo "node_modules" > .gitignore
+
       - name: Deploy to deploy branch
         run: |
           git config --global user.name "GitHub Actions"
