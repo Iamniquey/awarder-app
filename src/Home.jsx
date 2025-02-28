@@ -4,7 +4,7 @@ const Home = () => {
   const handleWindow = (e) => {
     e.preventDefault();
     window.open(
-      "/app",
+      "/awarder/app",
       "my popup",
       "width=400,height=320,position=absolute,top=400,left=1500"
     );

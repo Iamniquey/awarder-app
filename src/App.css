@@ -79,6 +79,11 @@ button:hover {
   background-color: rgb(212, 226, 255);
 }
 
+button:disabled {
+  background-color: rgb(212, 226, 255);
+  cursor: not-allowed;
+}
+
 .record {
   color: var(--blue);
 }
