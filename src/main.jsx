@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom/client"
+import ReactDOM from "react-dom/client";
 import Home from "./Home.jsx";
 import "./App.css";
 import {
@@ -13,10 +13,11 @@ import React from "react";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="awarder/" element={<Home />} />,
-      <Route path="/awarder/app" element={<App />} />
+      <Route path="/" element={<Home />} />,
+      <Route path="/app" element={<App />} />
     </>
-  )
+  ),
+  { basename: "/awarder" } // Set the base path
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
