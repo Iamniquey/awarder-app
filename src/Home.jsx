@@ -5,7 +5,7 @@ const Home = () => {
   const handleWindow = (e) => {
     e.preventDefault();
     window.open(
-      "/awarder/app",
+      "/awarder/",
       "my popup",
       "width=400,height=320,position=absolute,top=400,left=1500"
     );
@@ -15,8 +15,10 @@ const Home = () => {
       <main>
         <h1>Awarder App</h1>
         <p>Click launch to start in a popup window.</p>
-        <button onClick={handleWindow}>Launch</button>
-        <Link to="/app">Go to App</Link>
+        <button onClick={handleWindow}>Open Window</button>
+        <Link to="/app" className="link">
+          Launch App
+        </Link>
       </main>
     </div>
   );

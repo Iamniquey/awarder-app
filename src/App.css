@@ -65,7 +65,7 @@ main {
   outline-color: rgba(33, 109, 248, 0.5);
 }
 
-button {
+button, .link {
   padding: 5px;
   margin: 5px;
   border-radius: 7px;
@@ -75,13 +75,17 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button:hover, .link:hover {
   background-color: rgb(212, 226, 255);
 }
 
-button:disabled {
+button:disabled, .link:disabled {
   background-color: rgb(212, 226, 255);
   cursor: not-allowed;
+}
+.link {
+text-decoration: none;
+font-size: .8rem;
 }
 
 .record {
