@@ -13,7 +13,7 @@ import React from "react";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Home />} />,
+      <Route path="/" element={<Home />} />
       <Route path="/app" element={<App />} />
     </>
   ),
