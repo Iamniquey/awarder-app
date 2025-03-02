@@ -16,8 +16,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Home />} />,
       <Route path="/app" element={<App />} />
     </>
-  ),
-  { basename: "/awarder" } // Set the base path
+  )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
