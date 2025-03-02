@@ -31,6 +31,13 @@ jobs:
       - name: List files in workspace (debugging)
         run: ls -R
 
+      - name: Get the last commit message from main branch
+        id: get_commit_msg
+        run: |
+          # Fetch the latest commit message from the main branch
+          COMMIT_MESSAGE=$(git log -1 --pretty=%B origin/main)
+          echo "commit_message=$COMMIT_MESSAGE" >> $GITHUB_ENV
+
       - name: Deploy to deploy branch
         run: |
           git config --global user.name "GitHub Actions"
@@ -41,5 +48,6 @@ jobs:
           rm -rf dist   # Delete dist folder after moving contents
           echo "node_modules" > .gitignore  # Ensure node_modules is ignored
           git add .  # Add all files in root
-          git commit -m "Deploy build to deploy branch"
+          # Use the commit message from the previous step and format it
+          git commit -m "Deploy of '${{ env.commit_message }}'"
           git push origin deploy --force
