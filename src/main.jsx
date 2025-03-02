@@ -12,10 +12,10 @@ import React from "react";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <>
+    <Route>
       <Route path="/" element={<Home />} />
       <Route path="/app" element={<App />} />
-    </>
+    </Route>
   ),
   { basename: "/awarder" } // Set the base path
 );
