@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const handleWindow = (e) => {
@@ -15,6 +16,7 @@ const Home = () => {
         <h1>Awarder App</h1>
         <p>Click launch to start in a popup window.</p>
         <button onClick={handleWindow}>Launch</button>
+        <Link to="/app">Go to App</Link>
       </main>
     </div>
   );
