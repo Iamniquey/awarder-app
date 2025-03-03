@@ -93,6 +93,12 @@ font-size: .8rem;
   background-color: rgb(237, 245, 255);
 }
 
+.btn-warm {
+  background-color: rgb(255, 244, 210);
+  border-color: rgb(253, 213, 94);
+  color: rgb(211, 130, 24);
+}
+
 .record {
   color: var(--blue);
 }

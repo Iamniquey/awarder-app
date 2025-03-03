@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import DOMPurify from "dompurify";
 import rightSound from "./assets/right-sound.wav";
 import FinalScore from "./components/FinalScore";
+import Shortcuts from "./components/Shortcuts/Shortcuts";
 
 function App() {
   const [score, setScore] = useState(0);
@@ -93,6 +94,7 @@ function App() {
                +
             </button>
           </form>
+          <Shortcuts setAward={setAward} setAwardNumber={setAwardNumber} />
           <button className="btn-secondary" onClick={handleReset}>Reset</button>
           <button onClick={handleFinal}>Final Score</button>
         </div>
