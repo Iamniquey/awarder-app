@@ -14,7 +14,7 @@ const Home = () => {
     <div>
       <main>
         <h1>Awarder App</h1>
-        <p>Click launch to start in a popup window.</p>
+        <p>Click "Open Window" to launch a popup window where you can run the app.</p>
         <button onClick={handleWindow}>Open Window</button>
         <Link to="/app" className="link">
           Launch App

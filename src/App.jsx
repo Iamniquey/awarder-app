@@ -6,8 +6,8 @@ import FinalScore from "./components/FinalScore";
 
 function App() {
   const [score, setScore] = useState(0);
-  const [award, setAward] = useState("past tense");
-  const [awardNumber, setAwardNumber] = useState(5);
+  const [award, setAward] = useState("");
+  const [awardNumber, setAwardNumber] = useState(0);
   const [display, setDisplay] = useState(`+${awardNumber} for ${award}`);
   const [sessionRecord, setSessionRecord] = useState([]);
   const [displayAnim, setDisplayAnim] = useState(false);
@@ -49,6 +49,15 @@ function App() {
     setShowFinal(false);
   };
 
+  const handleClear = () => {
+    setAward("");
+    setAwardNumber(0);
+  };
+  const  handleReset = () => {
+    setScore(0);
+    setSessionRecord([]);
+  };
+
   return (
     <>
       <main>
@@ -76,10 +85,14 @@ function App() {
                 setAwardNumber(parseInt(DOMPurify.sanitize(e.target.value)))
               }
             />
+            <button className="btn-secondary" onClick={handleClear}>
+               x
+            </button>
             <button type="submit" disabled={displayAnim}>
-              Add
+               +
             </button>
           </form>
+          <button className="btn-secondary" onClick={handleReset}>Reset</button>
           <button onClick={handleFinal}>Final Score</button>
         </div>
         <FinalScore

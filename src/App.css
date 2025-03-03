@@ -73,6 +73,7 @@ button, .link {
   background-color: rgb(161, 193, 255);
   color: rgb(1, 63, 179);
   cursor: pointer;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 button:hover, .link:hover {
@@ -86,6 +87,10 @@ button:disabled, .link:disabled {
 .link {
 text-decoration: none;
 font-size: .8rem;
+}
+
+.btn-secondary {
+  background-color: rgb(237, 245, 255);
 }
 
 .record {

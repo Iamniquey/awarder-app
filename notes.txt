@@ -4,3 +4,7 @@ __________ BUGS
 
 __________ FEATURES TO ADD
 - frequently used buttons - grammar, fast, perfect
+- add reset scores buttons
+- add clear fields button
+- have background constantly change color on final score page
+- add final score congrats sound effect
