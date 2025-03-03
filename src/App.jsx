@@ -56,6 +56,7 @@ function App() {
   const  handleReset = () => {
     setScore(0);
     setSessionRecord([]);
+    handleClear();
   };
 
   return (
