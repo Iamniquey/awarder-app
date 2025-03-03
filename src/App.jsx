@@ -2,8 +2,7 @@ import React from "react";
 import { useEffect, useRef, useState } from "react";
 import DOMPurify from "dompurify";
 import rightSound from "./assets/right-sound.wav";
-import smile1 from "./assets/images/smile 1.png";
-import smile2 from "./assets/images/smile 2.png";
+import FinalScore from "./components/FinalScore";
 
 function App() {
   const [score, setScore] = useState(0);
@@ -77,30 +76,18 @@ function App() {
                 setAwardNumber(parseInt(DOMPurify.sanitize(e.target.value)))
               }
             />
-            <button type="submit" disabled={displayAnim}>Add</button>
+            <button type="submit" disabled={displayAnim}>
+              Add
+            </button>
           </form>
           <button onClick={handleFinal}>Final Score</button>
         </div>
-
-        <div className={`final-area ${showFinal ? "" : "final-area-hidden"}`}>
-          <div className="final-area">
-            <button onClick={handleReturn}>Return</button>
-          </div>
-          <div className="smile smile-1">
-            <img src={smile1} alt="" />
-          </div>
-          <div className="score score-animated">{score}</div>
-          <div className="smile smile-2">
-            <img src={smile2} alt="" />
-          </div>
-          <div className="record">
-            <ul>
-              {sessionRecord.map((record, index) => (
-                <li key={index}>{record}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <FinalScore
+          showFinal={showFinal}
+          score={score}
+          sessionRecord={sessionRecord}
+          handleReturn={handleReturn}
+        />
       </main>
     </>
   );
