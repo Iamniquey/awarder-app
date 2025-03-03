@@ -1,6 +1,6 @@
 import React from "react";
-import smile1 from "./assets/images/smile 1.png";
-import smile2 from "./assets/images/smile 2.png";
+import smile1 from "../assets/images/smile 1.png";
+import smile2 from "../assets/images/smile 2.png";
 
 const FinalScore = ({showFinal, score, sessionRecord, handleReturn}) => {
   return (
