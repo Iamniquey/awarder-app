@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useRef, useState } from "react";
 import DOMPurify from "dompurify";
 import rightSound from "./assets/right-sound.wav";
+import successSound from "./assets/success.wav";
 import FinalScore from "./components/FinalScore";
 import Shortcuts from "./components/Shortcuts/Shortcuts";
 
@@ -15,6 +16,7 @@ function App() {
   const [showFinal, setShowFinal] = useState(false);
 
   const audioRef = useRef(null);
+  const successRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,6 +46,8 @@ function App() {
 
   const handleFinal = () => {
     setShowFinal(true);
+    //play audio
+    successRef.current.play();
   };
 
   const handleReturn = () => {
@@ -104,6 +108,7 @@ function App() {
           sessionRecord={sessionRecord}
           handleReturn={handleReturn}
         />
+        <audio ref={successRef} src={successSound} />
       </main>
     </>
   );

@@ -11,7 +11,9 @@
 main {
   text-align: center;
   margin: 0 auto;
-  max-width: 550px;
+  width: 100%;
+  height: 100vh;
+  border: 1px black solid;
 }
 
 .score {
@@ -31,14 +33,14 @@ main {
 @keyframes scoreAnim {
   0% {
     transform: rotate(0deg);
-    font-size: 3rem;
+    font-size: 5rem;
   }
   25% {
-    font-size: 4rem;
+    font-size: 10rem;
     transform: rotate(360deg);
   }
   100% {
-    font-size: 3rem;
+    font-size: 5rem;
     transform: rotate(360deg);
   }
 }
@@ -101,6 +103,8 @@ font-size: .8rem;
 
 .record {
   color: var(--blue);
+  font-size: 2rem;
+  padding: 50px;
 }
 
 .record ul {
@@ -140,15 +144,19 @@ font-size: .8rem;
 
 .final-area {
   position: relative;
-  max-width: 400px;
+  max-width: 100%;
   margin: 0 auto;
 
   visibility: visible;
-  max-height: 500px;
+  max-height: 100%;
   opacity: 1;
   overflow: hidden;
   transition: all 1s ease-out;
   transition-delay: 1s;
+
+  animation-name: finalAreaAnim;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 .final-area-hidden {
@@ -158,6 +166,24 @@ font-size: .8rem;
   opacity: 0;
   overflow: hidden;
   transition: all 1s ease-out;
+}
+
+@keyframes finalAreaAnim {
+  0% {
+    background-color: #55ddff;
+  }
+  20% {
+    background-color: #fff494;
+  }
+  50% {
+    background-color: aquamarine;
+  }
+  70% {
+    background-color: #cdfc81;
+  }
+  100% {
+    background-color: #55ddff;
+  }
 }
 
 .award-area {
@@ -175,8 +201,15 @@ font-size: .8rem;
   transition: all 1s ease-out;
 }
 
+.width-550{
+  position: relative;
+  max-width: 550px;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .smile img {
-  width: 50px;
+  width: 100px;
   margin: 10px;
 }
 
@@ -192,3 +225,4 @@ font-size: .8rem;
   right: 50px;
   transform: rotate(45deg);
 }
+
