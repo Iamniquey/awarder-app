@@ -1,5 +1,6 @@
 __________ BUGS
-
+remove quotes
+window size in opera
 
 
 __________ FEATURES TO ADD

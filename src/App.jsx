@@ -23,7 +23,7 @@ function App() {
       audioRef.current.play();
 
       //display
-      const newAward = `+${awardNumber} for "${award}"`;
+      const newAward = `+${awardNumber} for ${award}`;
       setDisplay(`You got ${newAward}!`);
       setSessionRecord((prev) => [...prev, newAward]);
       setDisplayAnim(true);
