@@ -14,6 +14,7 @@ function App() {
   const [sessionRecord, setSessionRecord] = useState([]);
   const [displayAnim, setDisplayAnim] = useState(false);
   const [showFinal, setShowFinal] = useState(false);
+  
 
   const audioRef = useRef(null);
   const successRef = useRef(null);
@@ -44,25 +45,74 @@ function App() {
     }
   }, [displayAnim]);
 
+  //show final score
   const handleFinal = () => {
     setShowFinal(true);
     //play audio
     successRef.current.play();
   };
 
+  //go back to main screen
   const handleReturn = () => {
     setShowFinal(false);
   };
 
+  // clear form
   const handleClear = () => {
     setAward("");
     setAwardNumber(0);
   };
+
+  //reset form and score
   const  handleReset = () => {
     setScore(0);
     setSessionRecord([]);
+    clearData();
     handleClear();
   };
+
+  // SAVING SCORE AND SESSION RECORD TO LOCAL STORAGE
+  const [savedData, setSavedData] = useState(null);
+
+  //save data to local storage
+  const saveAllData = () =>{
+    const data = {
+      score: score,
+      sessionRecord: sessionRecord,
+    };
+
+    localStorage.setItem("allData", JSON.stringify(data));
+    setSavedData(data);
+  };
+
+  //restore data from local storage
+  const restoreData = () => {
+    const data = JSON.parse(localStorage.getItem("allData"));
+    if (data) {
+      setScore(data.score);
+      setSessionRecord(data.sessionRecord);
+    }
+  };
+
+  const clearData = () => {
+    localStorage.removeItem("allData");
+    setSavedData(null);
+  }
+
+  //auto restore on reload
+  useEffect(() => {
+    console.log("Restoring all data from local storage...");
+    restoreData();
+  }, []);
+
+  // auto save on data update
+  useEffect(() => {
+    if(score !== 0 || sessionRecord.length > 0) {
+      console.log("Saving all data to local storage...");
+      saveAllData();
+    }
+  }, [score, sessionRecord]);
+
 
   return (
     <>
