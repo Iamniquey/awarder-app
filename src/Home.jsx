@@ -7,7 +7,7 @@ const Home = () => {
     window.open(
       "/awarder/",
       "my popup",
-      "width=420,height=320,position=absolute,top=400,left=1500"
+      "width=420,height=350,position=absolute,top=400,left=1500"
     );
   };
   return (

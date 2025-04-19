@@ -14,7 +14,7 @@ function App() {
   const [sessionRecord, setSessionRecord] = useState([]);
   const [displayAnim, setDisplayAnim] = useState(false);
   const [showFinal, setShowFinal] = useState(false);
-  
+  const [showPreview, setShowPreview] = useState(false);
 
   const audioRef = useRef(null);
   const successRef = useRef(null);
@@ -47,9 +47,14 @@ function App() {
 
   //show final score
   const handleFinal = () => {
+    setShowPreview(false);
     setShowFinal(true);
     //play audio
     successRef.current.play();
+  };
+
+  const handlePreview = () => {
+    setShowPreview((prev) => !prev);
   };
 
   //go back to main screen
@@ -64,7 +69,7 @@ function App() {
   };
 
   //reset form and score
-  const  handleReset = () => {
+  const handleReset = () => {
     setScore(0);
     setSessionRecord([]);
     clearData();
@@ -75,7 +80,7 @@ function App() {
   const [savedData, setSavedData] = useState(null);
 
   //save data to local storage
-  const saveAllData = () =>{
+  const saveAllData = () => {
     const data = {
       score: score,
       sessionRecord: sessionRecord,
@@ -97,22 +102,19 @@ function App() {
   const clearData = () => {
     localStorage.removeItem("allData");
     setSavedData(null);
-  }
+  };
 
   //auto restore on reload
   useEffect(() => {
-    console.log("Restoring all data from local storage...");
     restoreData();
   }, []);
 
   // auto save on data update
   useEffect(() => {
-    if(score !== 0 || sessionRecord.length > 0) {
-      console.log("Saving all data to local storage...");
+    if (score !== 0 || sessionRecord.length > 0) {
       saveAllData();
     }
   }, [score, sessionRecord]);
-
 
   return (
     <>
@@ -142,16 +144,32 @@ function App() {
               }
             />
             <button className="btn-secondary" onClick={handleClear}>
-               x
+              x
             </button>
             <button type="submit" disabled={displayAnim}>
-               +
+              +
             </button>
           </form>
           <Shortcuts setAward={setAward} setAwardNumber={setAwardNumber} />
-          <button className="btn-secondary" onClick={handleReset}>Reset</button>
+          <button className="btn-secondary" onClick={handleReset}>
+            Reset
+          </button>
+          <button className="btn-secondary" onClick={handlePreview}>
+            Preview
+          </button>
           <button onClick={handleFinal}>Final Score</button>
         </div>
+        {showPreview ? (
+          <div>
+            <ul>
+              {sessionRecord.map((record, index) => (
+                <li key={index}>{record}</li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          ""
+        )}
         <FinalScore
           showFinal={showFinal}
           score={score}
