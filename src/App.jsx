@@ -120,7 +120,7 @@ function App() {
     <>
       <main>
         <div className={`award-area ${!showFinal ? "" : "award-area-hidden"}`}>
-          <div className="score">{score}</div>
+          <div data-testid="score" className="score">{score}</div>
           <div className={`display ${!displayAnim ? "" : "display-anim"}`}>
             {display}
           </div>
@@ -161,7 +161,7 @@ function App() {
         </div>
         {showPreview ? (
           <div>
-            <ul>
+            <ul data-testid="session-record">
               {sessionRecord.map((record, index) => (
                 <li key={index}>{record}</li>
               ))}
