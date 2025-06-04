@@ -66,7 +66,8 @@ main {
   outline-color: rgba(33, 109, 248, 0.5);
 }
 
-button, .link {
+button,
+.link {
   padding: 5px;
   margin: 5px;
   border-radius: 7px;
@@ -74,20 +75,22 @@ button, .link {
   background-color: rgb(161, 193, 255);
   color: rgb(1, 63, 179);
   cursor: pointer;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-button:hover, .link:hover {
+button:hover,
+.link:hover {
   background-color: rgb(212, 226, 255);
 }
 
-button:disabled, .link:disabled {
+button:disabled,
+.link:disabled {
   background-color: rgb(212, 226, 255);
   cursor: not-allowed;
 }
 .link {
-text-decoration: none;
-font-size: .8rem;
+  text-decoration: none;
+  font-size: 0.8rem;
 }
 
 .btn-secondary {
@@ -115,6 +118,7 @@ font-size: .8rem;
   font-weight: 700;
   height: 50px;
   opacity: 0;
+  visibility: hidden;
 }
 
 .display-anim {
@@ -126,6 +130,7 @@ font-size: .8rem;
 
 @keyframes displayAnim {
   0% {
+    visibility: visible;
     opacity: 1;
     font-size: 0.5rem;
   }
@@ -135,9 +140,8 @@ font-size: .8rem;
   30% {
     opacity: 1;
   }
-  100% {
+  70% {
     opacity: 0;
-    font-size: 1.2rem;
   }
 }
 
@@ -200,7 +204,7 @@ font-size: .8rem;
   transition: all 1s ease-out;
 }
 
-.width-550{
+.width-550 {
   position: relative;
   max-width: 550px;
   text-align: center;
@@ -224,4 +228,3 @@ font-size: .8rem;
   right: 50px;
   transform: rotate(45deg);
 }
-

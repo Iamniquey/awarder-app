@@ -11,14 +11,17 @@ const Shortcuts = ({ setAward, setAwardNumber }) => {
       <Shortcut value="great conversation" label="conv" setTarget={setAward} />
       | |
       <Shortcut value={1} label="1" setTarget={setAwardNumber} />
+      <Shortcut value={2} label="2" setTarget={setAwardNumber} />
       <Shortcut value={3} label="3" setTarget={setAwardNumber} />
-      <Shortcut value={5} label="5" setTarget={setAwardNumber} />
       <br/>
-      <Shortcut value="use ''" label="use" setTarget={setAward} />
+      <Shortcut value="saying 'I don't remember' fast" label="idr" setTarget={setAward} />
+      <Shortcut value="saying 'I don't know' fast" label="idk" setTarget={setAward} />
+      <Shortcut value="using ''" label="use" setTarget={setAward} />
       <Shortcut value="pronunciation of ''" label="pron" setTarget={setAward} />
       <Shortcut value="making the sentence ''" label="sent" setTarget={setAward} />
       <Shortcut value="careful thinking of ''" label="think" setTarget={setAward} />
       | |
+      <Shortcut value={5} label="5" setTarget={setAwardNumber} />
       <Shortcut value={10} label="10" setTarget={setAwardNumber} />
     </div>
   );

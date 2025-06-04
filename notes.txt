@@ -1,5 +1,6 @@
 __________ BUGS
-
+- hidden display overlaps and blocks input boxes when its long
+- add idk and idr
 
 
 __________ FEATURES TO ADD
