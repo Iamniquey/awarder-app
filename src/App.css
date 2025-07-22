@@ -228,3 +228,9 @@ button:disabled,
   right: 50px;
   transform: rotate(45deg);
 }
+
+.my-btn img {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+}

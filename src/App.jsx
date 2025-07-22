@@ -6,6 +6,8 @@ import successSound from "./assets/success.wav";
 import FinalScore from "./components/FinalScore";
 import Shortcuts from "./components/Shortcuts/Shortcuts";
 
+import paste from './assets/images/paste.png';
+
 function App() {
   const [score, setScore] = useState(0);
   const [award, setAward] = useState("");
@@ -33,6 +35,8 @@ function App() {
 
       //add score
       setScore((prev) => prev + awardNumber);
+
+      handleClear();
     }
   };
 
@@ -53,6 +57,7 @@ function App() {
     successRef.current.play();
   };
 
+  //show preview
   const handlePreview = () => {
     setShowPreview((prev) => !prev);
   };
@@ -75,6 +80,18 @@ function App() {
     clearData();
     handleClear();
   };
+
+const handlePaste = async () => {
+  // My fish can swim fast.
+  const clipboard = await navigator.clipboard.read();
+  const blob = await clipboard[0].getType("text/plain");
+  const blobText = await blob.text();
+  const anAward = `${award} of '${blobText}'`;
+  setAward(anAward);
+};
+
+
+
 
   // SAVING SCORE AND SESSION RECORD TO LOCAL STORAGE
   const [savedData, setSavedData] = useState(null);
@@ -99,6 +116,7 @@ function App() {
     }
   };
 
+  // clear data
   const clearData = () => {
     localStorage.removeItem("allData");
     setSavedData(null);
@@ -143,8 +161,11 @@ function App() {
                 setAwardNumber(parseInt(DOMPurify.sanitize(e.target.value)))
               }
             />
-            <button className="btn-secondary" onClick={handleClear}>
+            <button type="button" className="btn-secondary" onClick={handleClear}>
               x
+            </button>
+            <button type="button" className="btn-secondary my-btn" onClick={handlePaste}>
+              <img src={paste} alt="paste" />
             </button>
             <button type="submit" disabled={displayAnim}>
               +
