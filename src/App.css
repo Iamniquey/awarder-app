@@ -75,7 +75,8 @@ button,
   background-color: rgb(161, 193, 255);
   color: rgb(1, 63, 179);
   cursor: pointer;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: Tahoma, sans-serif;
+  line-height: .9;
 }
 
 button:hover,
