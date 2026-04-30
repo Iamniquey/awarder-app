@@ -1,0 +1,31 @@
+{
+  "name": "awarder-electron-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Electron desktop version of Awarder App",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "start": "electron ./electron/main.cjs",
+    "build:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^37.10.3",
+    "electron-builder": "^26.8.1"
+  },
+  "build": {
+    "appId": "com.awarder.app",
+    "productName": "Awarder",
+    "files": [
+      "electron/**/*",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false
+    }
+  }
+}

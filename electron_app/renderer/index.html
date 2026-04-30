@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awarder App</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <section id="app-page">
+        <div id="award-area" class="award-area">
+          <div id="score" class="score">0</div>
+          <div id="display" class="display">+0 for</div>
+
+          <form id="award-form">
+            <input id="award-input" class="award" type="text" placeholder="action" />
+            <input id="points-input" class="award-number" type="number" min="0" placeholder="points" value="0" />
+            <button type="button" id="clear-btn" class="btn-secondary">x</button>
+            <button type="button" id="paste-btn" class="btn-secondary my-btn">
+              <img src="../../src/assets/images/paste.png" alt="paste" />
+            </button>
+            <button type="submit" id="submit-btn">+</button>
+          </form>
+
+          <div id="shortcuts"></div>
+
+          <button class="btn-secondary" id="reset-btn">Reset</button>
+          <button class="btn-secondary" id="preview-btn">Preview</button>
+          <button id="final-btn">Final Score</button>
+        </div>
+
+        <div id="preview-area" class="page-hidden">
+          <ul id="session-record"></ul>
+        </div>
+
+        <div id="final-area" class="final-area final-area-hidden">
+          <button id="return-btn">Return</button>
+          <div class="width-550">
+            <div class="smile smile-1">
+              <img src="../../src/assets/images/smile 1.png" alt="" />
+            </div>
+            <div id="final-score" class="score score-animated">0</div>
+            <div class="smile smile-2">
+              <img src="../../src/assets/images/smile 2.png" alt="" />
+            </div>
+          </div>
+          <div class="record">
+            <ul id="final-record"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <audio id="right-sound" src="../../src/assets/right-sound.wav"></audio>
+    <audio id="success-sound" src="../../src/assets/success.wav"></audio>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
