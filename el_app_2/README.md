@@ -43,8 +43,3 @@ npm run build:win
 Build output will be created in:
 
 - `electron_app/release`
-
-Notes:
-
-- The app window icon is set to the original favicon image from `../public/smile 1.png`.
-- If you want a custom installer/taskbar icon in Windows, add a `.ico` file and configure it in the `build.win.icon` field in `package.json`.
