@@ -1,9 +1,7 @@
 __________ BUGS
-- hidden display overlaps and blocks input boxes when its long
-- add idk and idr
+
 
 
 __________ FEATURES TO ADD
-- frequently used buttons - grammar, fast, perfect
-- have background constantly change color on final score page
-- add final score congrats sound effect
+
+in electron - switch to using a session record variable, then can delete last continuously

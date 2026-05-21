@@ -7,10 +7,32 @@
   "author": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "set NODE_ENV=development&&electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:win": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.awarder.app",
+    "productName": "Awarder",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "icon": "renderer/assets/images/icon.ico",
+      "target": "nsis",
+      "signAndEditExecutable": false
+    }
   },
   "devDependencies": {
-    "electron": "^42.0.0"
+    "electron": "^42.0.0",
+    "electron-builder": "^26.8.1",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-reloader": "^1.2.3"
   }
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -11,12 +11,71 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
+    <link rel="stylesheet" href="styles.css" />
     <title>Awarder</title>
   </head>
   <body>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
-    <p id="info"></p>
+    <main>
+      <!-- AWARD AREA -->
+      <div id="award-area" class="award-area">
+        <div id="score" class="score"></div>
+        <div id="display" class="display"></div>
+        <audio id="audio-add" src="./assets/right-sound.wav"></audio>
+
+        <!-- FORM AREA -->
+        <form id="form">
+          <input type="text" placeholder="action" id="award" class="award" />
+          <input
+            min="0"
+            type="number"
+            placeholder="pts"
+            id="award-number"
+            class="award-number"
+          />
+          <button type="button" id="ex" class="btn-secondary">x</button>
+          <button type="button" id="paste" class="btn-secondary my-btn">
+            <img
+              id="paste-img"
+              src="./assets/images/paste.png"
+              alt="clipboard icon"
+              aria-label="paste from clipboard"
+            />
+          </button>
+          <button id="submit" type="submit">+</button>
+        </form>
+        
+        <div id="shortcuts" class="shortcuts">
+          <div id="text-shortcuts" class="text-shortcuts"></div>
+          <div id="number-shortcuts" class="number-shortcuts"></div>
+        </div>
+        <div class="arrow">︾</div> 
+        <div class="control-area">
+          <button type="button" id="delete-last" class="btn-secondary">Delete Last</button>
+          <button type="button" id="reset" class="btn-secondary">Reset</button>
+          <button type="button" id="preview">Preview</button>
+          <button type="button" id="final">Final Score</button>
+        </div>
+      </div>
+
+      <!-- SESSION RECORD -->
+      <div id="session-record"><ul></ul></div>
+
+      <!-- FINAL AREA -->
+      <div id="final-area" class="final-area final-area-hidden">
+        <button type="button" id="return">Return</button>
+        <div id="width-550" class="width-550">
+          <div id="smile-1" class="smile smile-1">
+            <img src="./assets/images/smile 1.png" alt="smile picture" />
+          </div>
+          <div id="score-animated" class="score score-animated"></div>
+          <div id="smile-2" class="smile smile-2">
+            <img src="./assets/images/smile 2.png" alt="smile picture" />
+          </div>
+        </div>
+        <div id="final-record" class="record"><ul></ul></div>
+      </div>
+      <audio id="audio-success" src="./assets/success.wav"></audio>
+    </main>
   </body>
   <script src="./renderer.js"></script>
 </html>
