@@ -1,15 +1,7 @@
 let score = 0;
 let showPreview = -1;
 let lastRecord = null;
-// let sessionRecord = [];
-let sessionRecord = [
-  { award: "+10 for perfect production", score: 10 },
-  { award: "+5 for vocab review", score: 5 },
-  { award: "+2 for grammar", score: 2 },
-  { award: "+1 for careful thinking", score: 1 },
-  { award: "+3 for great conversation for great conversation for great conversation for great conversation for great conversation", score: 3 },
-
-];
+let sessionRecord = [];
 
 
 

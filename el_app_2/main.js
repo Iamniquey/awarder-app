@@ -36,7 +36,8 @@ const createWindow = () => {
         type: "checkbox",
         checked: win.isAlwaysOnTop(),
         click: (menuItem) => {
-          win.setAlwaysOnTop(menuItem.checked);
+          win.setAlwaysOnTop(menuItem.checked, "floating", 1);
+          win.setVisibleOnAllWorkspaces(menuItem.checked);
         },
       },
       { type: "separator" },
@@ -65,6 +66,8 @@ const createWindow = () => {
   });
 
 };
+
+app.disableHardwareAcceleration();
 
 app.whenReady().then(() => {
   ipcMain.handle("clipboard:read-text", () => clipboard.readText());
